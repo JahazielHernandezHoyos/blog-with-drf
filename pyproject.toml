@@ -1,0 +1,26 @@
+[tool.poetry]
+name = "base_api"
+version = "1.0.0"
+description = "Base API for Jahaziel Hernandez"
+authors = ["Developer <jahazielhernandezhoyoz@gmail.com>"]
+
+[tool.poetry.dependencies]
+python = "^3.10"
+djangorestframework = "^3.14.0"
+factory-boy = "^3.2.1"
+drf-yasg = "^1.21.4"
+django-cors-headers = "^3.13.0"
+psycopg2-binary = "^2.9.5"
+psycopg2 = "^2.9.5"
+Django = "3.2"
+django-extensions = "^3.2.1"
+django-lifecycle = "^1.0.0"
+Pillow = "^9.4.0"
+django-storages = "^1.13.2"
+nltk = "^3.8.1"
+[tool.poetry.dev-dependencies]
+coverage = "^6.3.1"
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"

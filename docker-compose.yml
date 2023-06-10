@@ -1,0 +1,43 @@
+version: '3.9'
+
+services:
+    api:
+        container_name: backend
+        command: sh -c "python3 manage.py search_index --populate && python manage.py runserver 0.0.0.0:8500"
+        depends_on:
+            postgres-skeleton-db:
+                condition: service_healthy
+        build:
+            context: .
+            dockerfile: docker/Dockerfile
+        environment:
+            PYTHONUNBUFFERED: 1
+        env_file: dev.env
+        volumes:
+            - "${PWD}:/opt/app"
+        ports:
+            - "8500:8500"
+        networks:
+            internal-net:
+
+    postgres-skeleton-db:
+        container_name: postgres-skeleton-db
+        image: postgres:15.3-alpine
+        restart: on-failure
+        healthcheck:
+            test: [ "CMD-SHELL", "pg_isready" ]
+            interval: 10s
+            timeout: 5s
+            retries: 5
+        volumes:
+            - crs-volume:/var/lib/postgresql/data
+        env_file: dev.env
+        networks:
+            internal-net:
+
+volumes:
+    crs-volume:
+
+networks:
+    internal-net:
+        name: rv-skeleton-net
