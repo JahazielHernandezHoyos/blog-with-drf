@@ -1,5 +1,9 @@
 # INITIAL README
 
-For started project please use the comands: 
+For started project with:
 
-Make build
+make build
+
+make up
+
+make admin for the create superuser
