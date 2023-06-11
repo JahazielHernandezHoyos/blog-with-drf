@@ -26,10 +26,10 @@ class BaseUserCreationForm(UserCreationForm):
         fields = '__all__'
 
 
-class FormAllFields(forms.ModelForm):
+# class FormAllFields(forms.ModelForm):
 
-    form_title = 'None'
+#     form_title = 'None'
 
-    class Meta:
-        model = None
-        fields = '__all__'
+#     class Meta:
+#         model = None
+#         fields = '__all__'

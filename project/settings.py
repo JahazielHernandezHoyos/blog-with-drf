@@ -30,13 +30,11 @@ ALLOWED_HOSTS = ["*"]
 
 # Customized to allow username and email import serializers
 AUTHENTICATION_BACKENDS = [
-    "apps.accounts.serializers.EmailOrUsernameBackend",
     "django.contrib.auth.backends.ModelBackend",
 ]
 
 # Application definition
 INSTALLED_APPS = [
-    "django_filters",
     "django.contrib.admin",
     "django.contrib.auth",
     "django.contrib.contenttypes",
@@ -49,8 +47,7 @@ INSTALLED_APPS = [
     "drf_yasg",
     "apps.accounts",
     "apps.main",
-    "apps.stores",
-    "django_elasticsearch_dsl",
+    "apps.blog",
     "storages"
 ]
 
@@ -128,7 +125,7 @@ DATABASES = {
 
 LANGUAGE_CODE = "en-es"
 
-TIME_ZONE = "America/Colombia"
+TIME_ZONE = "America/Bogota"
 
 USE_I18N = True
 

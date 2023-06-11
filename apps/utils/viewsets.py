@@ -9,7 +9,7 @@ from apps.utils.permissions import IsAccount, IsCompanyOwner
 
 
 class CustomPagination(PageNumberPagination):
-    page_size = 15
+    page_size = 35
 
     def get_paginated_response(self, data):
         return Response(

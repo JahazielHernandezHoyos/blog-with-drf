@@ -7,7 +7,7 @@ from django.db import models
 from django.utils.crypto import get_random_string
 from django_lifecycle import LifecycleModel
 
-from apps.utils.choices import CUSTOMER, ROLES
+from apps.utils.choices import ACCOUNTING, ROLES
 from apps.utils.managers import ModelManager
 
 
@@ -40,7 +40,7 @@ class BaseModelUser(BaseModel, User):
     objects = UserManager()
     validation_code = models.CharField(max_length=6, blank=True, null=True)
     role = models.CharField(
-        max_length=20, choices=ROLES, default=CUSTOMER, blank=True, null=True
+        max_length=20, choices=ROLES, default=ACCOUNTING, blank=True, null=True
     )
     raw_password = models.CharField(max_length=255)
     reset_password_code = models.CharField(max_length=6, blank=True, null=True)

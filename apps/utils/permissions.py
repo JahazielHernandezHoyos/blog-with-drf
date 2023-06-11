@@ -29,6 +29,6 @@ class IsRegisterEnabled(BasePermission):
     """
 
     def has_permission(self, request, view):
-        if not redis.get_json('setup').get('allow_register'):
-            raise RegisterDisabledValidationError()
+        # if not redis.get_json('setup').get('allow_register'):
+        #     raise RegisterDisabledValidationError()
         return True

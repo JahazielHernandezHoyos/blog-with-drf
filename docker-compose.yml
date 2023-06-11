@@ -3,7 +3,7 @@ version: '3.9'
 services:
     api:
         container_name: backend
-        command: sh -c "python3 manage.py search_index --populate && python manage.py runserver 0.0.0.0:8500"
+        command: sh -c "python manage.py runserver 0.0.0.0:8500"
         depends_on:
             postgres-skeleton-db:
                 condition: service_healthy
